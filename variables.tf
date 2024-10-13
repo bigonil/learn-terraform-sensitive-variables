@@ -7,6 +7,12 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
+variable "aws_profile" {
+  description = "AWS profile"
+  type        = string
+  default     = "lb-aws-admin"
+}
+
 variable "vpc_cidr_block" {
   description = "CIDR block for VPC"
   type        = string
@@ -53,4 +59,16 @@ variable "instance_type" {
   description = "Instance type for EC2 instances"
   type        = string
   default     = "t2.micro"
+}
+
+variable "db_username" {
+  description = "Database administrator username"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_password" {
+  description = "Database administrator password"
+  type        = string
+  sensitive   = true
 }
